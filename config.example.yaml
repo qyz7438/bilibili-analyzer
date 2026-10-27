@@ -1,0 +1,47 @@
+paths:
+  cache_dir: ./cache
+  download_dir: ./downloads
+  notes_dir: ./notes
+  log_dir: ./logs
+  obsidian_vault: ./output/obsidian
+  pending_vault: ./output/pending
+workflow:
+  auto_approve: false
+  default_mode: pending
+bilibili:
+  api_base: https://api.bilibili.com
+  request_interval: 1.0
+  max_retries: 3
+  timeout: 30
+  favorite_uid: 0
+  cookie: ''
+llm:
+  base_url: http://127.0.0.1:4000/v1
+  model: your-model-name
+  api_key: ''
+  max_tokens: 2048
+  temperature: 0.2
+  timeout: 120
+  max_retries: 3
+video_download:
+  format: bestaudio/best
+  download_audio: false
+  extract_subtitles: true
+  concurrent_downloads: 1
+  fragment_retries: 3
+transcription:
+  enabled: false
+  model: distil-large-v3
+  device: auto
+  compute_type: int8
+  max_duration_seconds: 1800
+  segment_length: 300
+analysis:
+  analyze_danmaku: true
+  analyze_comments: true
+  max_comments: 100
+  language: zh
+cronjob:
+  queue_file: ./output/queue.json
+  schedule: '0 9 * * *'
+  log_retention_days: 7
